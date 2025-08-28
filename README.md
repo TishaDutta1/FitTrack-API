@@ -1,8 +1,4 @@
-Of course\! Here is your documentation reformatted to match the beautiful layout you provided. I've adapted the content to accurately describe your **Simple Fitness Tracker API**.
 
-Just copy and paste the code below into your `README.md` file.
-
-````markdown
 <div align="center">
   <h1 style="font-size: 3em;">💪 Simple Fitness Tracker API</h1>
   <p>A simple and efficient RESTful API for tracking users, workouts, and daily steps, built with Python and FastAPI.</p>
@@ -74,7 +70,7 @@ Follow these simple steps to get the API up and running on your local machine.
    Run the `sqlite3` command to create the database file and then paste the SQL schema to create the tables.
    ```bash
    sqlite3 simple_fitness.db
-````
+
 
 Now, paste this entire block into the SQLite prompt and press Enter:
 
