@@ -45,7 +45,7 @@ Follow these simple steps to get the API up and running on your local machine.
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git](https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git)
+    git https://github.com/TishaDutta1/FitTrack-API.git
     cd YOUR_REPOSITORY_NAME
     ```
 
