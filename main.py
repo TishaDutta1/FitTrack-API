@@ -3,11 +3,49 @@ import sqlite3
 
 app = FastAPI()
 
-
 def get_db_connection():
     conn = sqlite3.connect("simple_fitness.db")
     conn.row_factory = sqlite3.Row  
     return conn
+
+
+def init_db():
+    conn = get_db_connection()
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS users (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            age INTEGER NOT NULL,
+            height REAL NOT NULL,
+            weight REAL NOT NULL
+        )
+    """)
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS workouts (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            activity TEXT NOT NULL,
+            duration INTEGER NOT NULL,
+            calories INTEGER NOT NULL,
+            date TEXT NOT NULL,
+            FOREIGN KEY(user_id) REFERENCES users(id)
+        )
+    """)
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS steps (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            steps INTEGER NOT NULL,
+            date TEXT NOT NULL,
+            FOREIGN KEY(user_id) REFERENCES users(id)
+        )
+    """)
+
+    
+    conn.commit()
+    conn.close()
+
+init_db()
 
 
 
