@@ -3,7 +3,6 @@ import sqlite3
 
 app = FastAPI()
 
-# ------------------ Database ------------------
 
 def get_db_connection():
     conn = sqlite3.connect("simple_fitness.db")
